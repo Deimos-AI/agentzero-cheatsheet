@@ -1,0 +1,88 @@
+# Api Routes
+
+[← Home](../00-Home.md) | [↑ README](../README.md)
+
+Source: `/a0/usr/projects/agentzero/a0/api`
+
+- `__init__.py` (0 bytes) — Package marker for the API module
+- `__init__.pytouch` (0 bytes) — Touch file for API module auto-discovery
+- `agents.py` (621 bytes) — List and manage available agent profiles
+- `api_files_get.py` (3,392 bytes) — Retrieve file contents from the working directory
+- `api_log_get.py` (2,315 bytes) — Stream or retrieve agent execution logs
+- `api_message.py` (7,623 bytes) — Core message endpoint for sending user messages and receiving agent responses
+- `api_reset_chat.py` (2,177 bytes) — Reset the current chat session and clear history
+- `api_terminate_chat.py` (2,054 bytes) — Terminate a running agent execution mid-loop
+- `backup_create.py` (2,156 bytes) — Create a backup snapshot of chat or settings data
+- `backup_get_defaults.py` (959 bytes) — Get default backup configuration and paths
+- `backup_inspect.py` (1,970 bytes) — Inspect the contents of an existing backup
+- `backup_preview_grouped.py` (5,234 bytes) — Preview backup contents grouped by category
+- `backup_restore.py` (2,546 bytes) — Restore chat or settings from a backup snapshot
+- `backup_restore_preview.py` (2,740 bytes) — Preview what a backup restore would change
+- `backup_test.py` (2,216 bytes) — Test backup integrity and verify restore compatibility
+- `banners.py` (712 bytes) — Retrieve and manage UI banner content
+- `cache_reset.py` (785 bytes) — Clear server-side caches (FAISS, settings, etc.)
+- `chat_create.py` (1,978 bytes) — Create a new chat session
+- `chat_export.py` (553 bytes) — Export chat history as JSON or markdown
+- `chat_files_path_get.py` (708 bytes) — Get the file storage path for a specific chat
+- `chat_load.py` (467 bytes) — Load an existing chat session by ID
+- `chat_remove.py` (1,095 bytes) — Delete a chat session and its associated data
+- `chat_reset.py` (933 bytes) — Reset a chat session while preserving the session ID
+- `csrf_token.py` (5,248 bytes) — Generate and validate CSRF tokens for API security
+- `ctx_window_get.py` (623 bytes) — Get the current context window usage for the active chat
+- `delete_work_dir_file.py` (1,164 bytes) — Delete a file from the working directory
+- `download_work_dir_file.py` (5,876 bytes) — Download a file from the working directory
+- `edit_work_dir_file.py` (3,368 bytes) — Edit a file in the working directory via the WebUI editor
+- `file_info.py` (1,598 bytes) — Get metadata and size info for a working directory file
+- `get_work_dir_files.py` (882 bytes) — List all files in the working directory with metadata
+- `health.py` (659 bytes) — Health check endpoint for monitoring and load balancers
+- `history_get.py` (480 bytes) — Retrieve conversation history for a chat session
+- `image_get.py` (5,897 bytes) — Retrieve and serve images generated or referenced in chat
+- `load_webui_extensions.py` (738 bytes) — Load and serve WebUI extension assets for the frontend
+- `logout.py` (414 bytes) — Terminate the current user session
+- `mcp_server_get_detail.py` (662 bytes) — Get detailed status of a specific MCP server
+- `mcp_server_get_log.py` (647 bytes) — Retrieve logs from a running MCP server
+- `mcp_servers_apply.py` (931 bytes) — Apply MCP server configuration changes
+- `mcp_servers_status.py` (495 bytes) — Get the connection status of all MCP servers
+- `message.py` (2,992 bytes) — Send a message to the agent and return the response
+- `message_async.py` (311 bytes) — Send a message asynchronously without waiting for completion
+- `message_queue_add.py` (986 bytes) — Add a message to the processing queue
+- `message_queue_remove.py` (738 bytes) — Remove a queued message
+- `message_queue_send.py` (1,173 bytes) — Send all queued messages for processing
+- `notification_create.py` (2,395 bytes) — Create a new user notification
+- `notifications_clear.py` (562 bytes) — Clear all notifications
+- `notifications_history.py` (685 bytes) — Retrieve notification history
+- `notifications_mark_read.py` (1,176 bytes) — Mark notifications as read
+- `nudge.py` (533 bytes) — Send a nudge to a running agent to continue execution
+- `pause.py` (559 bytes) — Pause agent execution mid-loop
+- `plugins.py` (12,208 bytes) — Plugin management endpoint (list, toggle, configure, install)
+- `plugins_list.py` (511 bytes) — List all discovered plugins with their status
+- `poll.py` (458 bytes) — Poll for agent execution status updates
+- `projects.py` (5,624 bytes) — Project management endpoint (create, list, switch, delete)
+- `rename_work_dir_file.py` (2,008 bytes) — Rename a file in the working directory
+- `restart.py` (250 bytes) — Restart the Agent Zero server process
+- `rfc.py` (423 bytes) — Request-for-comments endpoint for collaborative workflows
+- `scheduler_task_create.py` (6,478 bytes) — Create a new scheduled, ad-hoc, or planned task
+- `scheduler_task_delete.py` (2,018 bytes) — Delete a scheduled task
+- `scheduler_task_run.py` (2,855 bytes) — Manually trigger a scheduled task execution
+- `scheduler_task_update.py` (3,595 bytes) — Update an existing scheduled task configuration
+- `scheduler_tasks_list.py` (1,173 bytes) — List all scheduled tasks with their status
+- `scheduler_tick.py` (1,769 bytes) — Internal tick endpoint that triggers due scheduled tasks
+- `self_update_get.py` (837 bytes) — Check for available Agent Zero updates
+- `self_update_schedule.py` (1,278 bytes) — Schedule an automatic self-update
+- `self_update_tags.py` (1,702 bytes) — List available release tags for update selection
+- `settings_get.py` (394 bytes) — Retrieve current Agent Zero settings
+- `settings_set.py` (475 bytes) — Update Agent Zero settings
+- `settings_workdir_file_structure.py` (1,121 bytes) — Get the working directory file structure for settings UI
+- `skills.py` (2,471 bytes) — Skill management endpoint (list, load, execute)
+- `skills_import.py` (3,145 bytes) — Import a skill from an external source
+- `skills_import_preview.py` (3,126 bytes) — Preview skill import before applying
+- `subagents.py` (1,934 bytes) — List available subordinate agent profiles
+- `synthesize.py` (3,639 bytes) — Text-to-speech synthesis endpoint
+- `transcribe.py` (667 bytes) — Speech-to-text transcription endpoint
+- `tunnel.py` (1,998 bytes) — Create and manage network tunnels for remote access
+- `tunnel_proxy.py` (1,278 bytes) — Proxy requests through an established tunnel
+- `upload.py` (1,159 bytes) — Upload files to the Agent Zero server
+- `upload_work_dir_files.py` (2,194 bytes) — Upload files directly to the working directory
+- `ws_dev_test.py` (3,474 bytes) — WebSocket test endpoint for development debugging
+- `ws_hello.py` (487 bytes) — WebSocket handshake and connection test endpoint
+- `ws_webui.py` (1,039 bytes) — Main WebSocket endpoint for WebUI real-time communication
